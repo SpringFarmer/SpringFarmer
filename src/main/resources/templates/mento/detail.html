@@ -74,11 +74,25 @@
                                                         </div>
                                                     </dl>
                                                 </div>
-                                                <button id="main_fixed_button">
-                                                    <div style="display: flex!important;"></div>
-                                                    1:1 채팅하기
-                                                    <div style="display: flex!important;"></div>
-                                                </button>
+                                                <div id="main_fiexd_buttons">
+                                                    <button class="main_fixed_button" id="mento_submit">
+                                                        <div style="display: flex!important;"></div>
+                                                        멘토 신청
+                                                        <div style="display: flex!important;"></div>
+                                                    </button>
+                                                    <button class="main_fixed_button" id="chatting_submit" onclick="location.href='/mento/chatting'">
+                                                        <div style="display: flex!important;"></div>
+                                                        1:1 채팅하기
+                                                        <div style="display: flex!important;"></div>
+                                                    </button>
+                                                </div>
+                                                <div style="margin-top: 16px;">
+                                                    <button id="move_list" onclick="location.href='/mento/list'">
+                                                        <div style="display: flex!important;"></div>
+                                                        목록 이동
+                                                        <div style="display: flex!important;"></div>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </article>
                                         <!--                                        <div id="main_fixed_banner">-->
@@ -548,14 +562,75 @@
                                     <input type="submit" id="main_reply_button" disabled value="후기 작성">
                                 </div>
                             </div>
+
+                            <!--페이징 처리-->
+                            <div id="page">
+                                <div class="page_nation">
+                                    <a class="arrow pprev" href="#"></a>
+                                    <a class="arrow prev" href="#"></a>
+                                    <a href="#" class="active">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#">7</a>
+                                    <a href="#">8</a>
+                                    <a href="#">9</a>
+                                    <a href="#">10</a>
+                                    <a class="arrow next" href="#"></a>
+                                    <a class="arrow nnext" href="#"></a>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </ul>
-                <div id="main_reply_inner5"></div>
             </section>
         </div>
     </div>
 </div>
+
+<!--멘토 신청 모달-->
+<div id="modal" style="display: none">
+    <div id="modal-overlay">
+        <div class="c-modal">
+            <div class="m-wrap">
+                <div class="m-title">멘토 신청하기</div>
+                <form action="">
+                    <div class="m-c-wrap">
+                        <div class="m-c-title">멘토님께 인사말 한마디 부탁드려요</div>
+                        <input type="text" placeholder="간단한 인사말 작성해주세요" class="modal_input">
+                    </div>
+                    <div class="applyBtnWrap">
+                        <button type="button" class="applyBtn">멘토 신청</button>
+                        <button type="button" class="cancel">취소</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--멘토 신청 완료 모달-->
+<div id="modalSuccess" style="display: none;">
+    <div id="modalSuccess-overlay">
+        <div class="c-modal">
+            <div class="m-wrap">
+                <div class="m-title">멘토 신청 완료되었습니다!</div>
+                <form action="">
+                    <div class="m-c-wrap">
+                        <div class="m-c-title">1:1 채팅하기 버튼으로 멘토와 채팅해주세요.</div>
+                    </div>
+                    <div class="applyBtnWrap">
+                        <button type="button" class="listBtn" onclick="location.href='/mento/list'">완료</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--푸터 삽입-->
 <div th:replace="/footer/footer.html :: footer" class="footer"/>
 </body>

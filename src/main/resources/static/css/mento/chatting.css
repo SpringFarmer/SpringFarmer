@@ -219,3 +219,126 @@
     top: 50%;
     margin-top: -12px;
 }
+
+/**************************************************************/
+/*지원하기 모달창*/
+/**************************************************************/
+div#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 9998;
+}
+div.c-modal {
+    max-height: 640px;
+    width: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+div.m-wrap {padding: 40px 0;}
+div.m-title {
+    padding: 0 32px 20px;
+    color: rgb(4, 5, 5);
+    text-align: left;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+}
+div.m-c-wrap {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-height: 375px;
+}
+div.m-c-wrap p {
+    text-align: center;
+}
+div.m-c-title {
+    color: rgb(60, 65, 68);
+    margin-top: -4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 20px!important;
+}
+div.applyBtnWrap {
+    padding: 20px 32px 0;
+    display: flex;
+    justify-content: space-between;
+}
+button.applyBtn,
+button.cancel{
+    width: 49%;
+    height: 40px;
+    padding: 0 14px;
+    min-width: 56px;
+    background-color: #47c880;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: .02em;
+    font-weight: 600;
+
+}
+button.applyBtn:disabled {
+    background-color: #47c88052;
+    cursor: not-allowed!important;
+}
+button.applyBtn:hover:not([disabled]),
+button.cancel:hover{
+    background-color: #357e55;
+}
+.modal_input{
+    border: 1px solid #e1e4e6;
+    width: 400px;
+    height: 30px;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+
+
+/**************************************************************/
+/*지원 완료 모달창*/
+/**************************************************************/
+div#modalSuccess-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 9998;
+}
+div#modalSuccess-overlay .m-c-title {
+    text-align: center;
+}
+button.listBtn {
+    width: 100%;
+    height: 40px;
+    padding: 0 14px;
+    min-width: 56px;
+    background-color: #47c880;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: .02em;
+    font-weight: 600;
+}
+button.listBtn:disabled {
+    background-color: #47c88052;
+    cursor: not-allowed!important;
+}
+button.listBtn:hover:not([disabled]) {background-color: #357e55;}

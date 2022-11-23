@@ -69,73 +69,6 @@
                                         <div style="align-self: flex-end; display: flex!important;align-items: center;"></div>
                                     </div>
                                 </section>
-
-
-
-                                <!--<section class="mg_32">
-                                    <div style="margin-bottom: 12px!important;">
-                                        <div class="section2_title">주요 작물</div>
-                                        <div class="section2_title_margin"></div>
-                                    </div>
-                                    <span>
-                                        <input type="text" style="display: none">
-                                        <div id="first_section2_inner3">
-                                            <div id="first_section2_inner4">
-                                                <div>
-                                                    <div id="first_section2_inner5">
-                                                        <div id="first_section2_inner6">
-                                                            <div id="first_section2_inner7">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24"
-                                                                     fill="black"
-                                                                     xmlns="http://www.w3.org/2000/svg"
-                                                                     id="first_section2_inner8"><path
-                                                                        fill-rule="evenodd"
-                                                                        clip-rule="evenodd"
-                                                                        d="M11 16C14.3137 16 17 13.3137 17 10C17 6.68629 14.3137 4 11 4C7.68629 4 5 6.68629 5 10C5 13.3137 7.68629 16 11 16ZM11 18C15.4183 18 19 14.4183 19 10C19 5.58172 15.4183 2 11 2C6.58172 2 3 5.58172 3 10C3 14.4183 6.58172 18 11 18Z"></path><path
-                                                                        fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M15.2929 15.2929C15.6834 14.9024 16.3166 14.9024 16.7071 15.2929L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L15.2929 16.7071C14.9024 16.3166 14.9024 15.6834 15.2929 15.2929Z"></path></svg>
-                                                                <input type="text" id="first_section2_inner9"
-                                                                       placeholder="주요작물을 입력하세요."
-                                                                       style="font-size: 100%">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </span>
-                                </section>
-                                 <section class="mg_32">
-                                    <div class="mb_12">
-                                        <div class="section2_title">대상자 선정</div>
-                                        <div class="section2_title_margin"></div>
-                                    </div>
-                                    <div>
-                                        <input type="text" class="first_section3_inner1">
-                                        <div class="first_section3_inner2">
-                                            <span class="section3_span">입문자</span>
-                                            <span class="section3_span">경험자</span>
-                                            <span class="section3_span">전문가</span>
-                                        </div>
-                                    </div>
-                                </section>
-                                <section class="mg_32">
-                                    <div class="mb_12">
-                                        <div class="section2_title">경력</div>
-                                        <div class="section2_title_margin"></div>
-                                    </div>
-                                    <div>
-                                        <input type="text" class="first_section3_inner1">
-                                        <div class="first_section3_inner2">
-                                            <span class="section3_span">1~3년차</span>
-                                            <span class="section3_span">3~5년차</span>
-                                            <span class="section3_span">5~7년차</span>
-                                            <span class="section3_span">7~10년차</span>
-                                            <span class="section3_span">10년차 이상</span>
-                                        </div>
-                                    </div>
-                                </section>-->
-                                <!--현재 경력 소개-->
                                 <section class="mg_32">
                                     <div class="first_section4_title">
                                         <div>
@@ -159,29 +92,13 @@
                                             <div class="first_section4_main_title">과거 경력 소개</div>
                                             <div class="first_section4_sub_title">과거 어떤 일을 했는지 알려주세요</div>
                                         </div>
+                                        <span class="first_section4_example">예시보기</span>
                                     </div>
                                     <div>
                                         <div>
                                             <div class="first_section4_write">
                                                 <div style="position: relative">
-                                                    <input type="text" class="fisrt_section4_write_input"
-                                                           placeholder="과거 경력을 입력해주세요">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="first_section4_write">
-                                                <div style="position: relative">
-                                                    <input type="text" class="fisrt_section4_write_input"
-                                                           placeholder="과거 경력을 입력해주세요">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="first_section4_write">
-                                                <div style="position: relative">
-                                                    <input type="text" class="fisrt_section4_write_input"
-                                                           placeholder="과거 경력을 입력해주세요">
+                                                   <textarea name="" id="carrer_textarea" cols="30" rows="5" placeholder="과거 경력을 입력해주세요"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -329,10 +246,16 @@
                                     </div>
                                     <div style="margin-bottom: 32px;">
                                         <div class="align-items-center">
-                                            <img class="upload" src="/image/program/upload.gif">
-                                            <img class="upload" src="/image/program/link_upload.gif">
+                                            <label style="cursor: pointer">
+                                                <img style="width: 20px; height: 20px; border: 1px solid #e1e4e6" id="preview-image" src="/image/program/upload.gif">
+                                                <input type="file" class="input-div-input" id="attach" style="display: none;">
+                                            </label>
+
+                                            <!-- <label for="attach">
+                                                 <img class="upload" src="/image/program/upload.gif">
+                                             </label>
+                                             <input type="file" id="attach" style="display: none;">-->
                                         </div>
-                                        <input type="file" id="attach" style="display: none;">
                                         <div class="c-callout-information">
                                             <div class="c-callout-wrapper">
                                                 <div class="align-center">
@@ -412,13 +335,16 @@
                             <div id="write_footer_inner3">
                                 <button id="footer_button_prev" onclick="prevButton()">
                                     <div style="display: flex;" disabled="disabled">
-                                        <img class="footer_prev_image" src="/image/program/prev_register.gif" disabled="disabled">
+                                        <img class="footer_prev_image" src="/image/program/prev_register.gif"
+                                             disabled="disabled">
                                     </div>
                                     이전
                                     <div style="display: flex;" disabled="disabled"></div>
                                 </button>
-                                    <button id="footer_button_next" onclick="nextButton()">다음<img src="/image/program/next_register.gif" class="footer_next_image"></button>
-                                    <button class="submitBtn" style="display: none">제출<img src="/image/program/next_register.gif" class="footer_next_image" ></button>
+                                    <button id="footer_button_next" onclick="nextButton()">다음<img
+                                            src="/image/program/next_register.gif" class="footer_next_image"></button>
+                                    <button class="submitBtn" style="display: none">제출<img
+                                            src="/image/program/next_register.gif" class="footer_next_image"></button>
                             </div>
                         </div>
                     </div>

@@ -71,17 +71,21 @@
     /*제출하기 버튼 클릭 시 유효성 검사*/
     $(".submitBtn").on("click" , function () {
         var inputList = new Array();
-        var textareaList = new Array();
+        /*var textareaList = new Array();*/
         let check = true;
 
-        $("input").each(function(index, item) {
+        $("input:not(.note-editor input , #attach)").each(function(index, item){
+            console.log(index);
             inputList.push($(item));
         });
-        $("textarea").each(function(index, item) {
-            textareaList.push($(item));
-        });
 
+        /*$("textarea").each(function(index, item) {
+            textareaList.push($(item));
+        });*/
+
+        console.log(inputList.length);
         for(let i = 0; i < inputList.length; i++) {
+            console.log(inputList[i].val());
             if(inputList[i].val() == '') {
                 inputList[i].css("border", "1px solid red");
                 check = false;
@@ -89,12 +93,11 @@
         }
 
         /*썸머노트 비어있을 때 빨간테두리 표시*/
-        if($(".note-editable").val() == ''){
+        if($(".note-editable").text() == ''){
             $(".note-editable").css("border", "1px solid red");
             check = false;
         }
 
-        console.log(check);
         if(!check) {
             alert("입력하지 않은 값이 있습니다.");
             return;
@@ -133,9 +136,9 @@
         }
     });
 
-    /*/!*파일 첨부*!/
-    const file = document.querySelector($(".upload"));
-    const thumbnail = document.querySelector();
+    /*파일 첨부*/
+    const file = document.querySelector($("#attach"));
+    const thumbnail = document.querySelector($(".thumbnail"));
     file.addEventListener("change",function(e){
         // console.log(e.target.files[0]);
         var reader = new FileReader();
@@ -156,7 +159,41 @@
 
 
         }
-    });*/
+    });
+
+
+    /*-----------------------------------------------------------*/
+    /*첨부파일 이미지 미리보기*/
+    /*-----------------------------------------------------------*/
+    function readImage(input) {
+        // 인풋 태그에 파일이 있는 경우
+        if(input.files && input.files[0]) {
+            // 이미지 파일인지 검사 (생략)
+            // FileReader 인스턴스 생성
+            const reader = new FileReader()
+            // 이미지가 로드가 된 경우
+            reader.onload = e => {
+                const previewImage = document.getElementById("preview-image")
+                previewImage.src = e.target.result
+            }
+            // reader가 이미지 읽도록 하기
+            reader.readAsDataURL(input.files[0])
+            $(".input-file-button").text("수정");
+        }
+    }
+
+    // input file에 change 이벤트 부여
+    const inputImage = document.getElementById("input-image")
+    inputImage.addEventListener("change", e => {
+        readImage(e.target)
+    })
+
+    /*버튼이 삭제일 때*/
+    if($(".input-file-button").text() == "삭제") {
+        $(".input-file-button").on("click", function() {
+            $("#input-image").val('');
+        });
+    }
 
 
 
